@@ -94,14 +94,45 @@
       max-width: 600px;
       margin: 0 auto 40px auto;
     }
+.logo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.logo-wrapper img {
+  max-height: 60px;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .logo-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
   </style>
 </head>
 <body>
   <header>
-    <img src="img/logo.png" alt="Logo" />
+    <header>
+  <div class="logo-wrapper">
+    <img src="img/logo.png" alt="Left Logo" />
+    <img src="img/logo2.png" alt="Right Logo" />
+  </div>
+  <h1>Technology Architecture of the Digital Platform</h1>
+  <p>Structured into 7 Logical Clusters + Analytics & Visualization Support</p>
+</header>
 
-    <h1>Technology Architecture of the Digital Platform</h1>
-    <p>Structured into 6 Logical Clusters + Analytics & Visualization Support</p>
   </header>
 
   <section>
@@ -165,14 +196,25 @@
     <tr><th>Storage</th><td>Firebase Storage, Cloudinary, Supabase Storage</td></tr>
     <tr><th>Hosting</th><td>GitHub Pages, Vercel, Netlify, Railway (optional)</td></tr>
   </table>
+
+  <h3>E-Commerce & Payment Integration</h3>
+  <table>
+    <tr><th>Platforms & APIs</th><td>Stripe, PayPal, Coinbase Commerce</td></tr>
+    <tr><th>Digital Goods</th><td>Token-gated content, downloadable assets, NFT perks</td></tr>
+    <tr><th>Storefronts</th><td>Headless CMS (Sanity, Contentful), React-based shop modules</td></tr>
+    <tr><th>Subscription Logic</th><td>Recurring donations, membership plans, supporter tiers</td></tr>
+  </table>
+
   <h3>Role in Process:</h3>
-<ul>
-  <li>Backend manages user accounts, POI data, form responses, and uploads</li>
-  <li>Provides secure API endpoints and authorization logic</li>
-  <li>Hosts real-time functions and webhooks</li>
-  <li>Admin panel logic for managing campaigns and analytics</li>
-</ul>
+  <ul>
+    <li>Backend manages user accounts, POI data, form responses, and uploads</li>
+    <li>Provides secure API endpoints and authorization logic</li>
+    <li>Hosts real-time functions and webhooks</li>
+    <li>Admin panel logic for managing campaigns and analytics</li>
+    <li>Supports donations, tokenized access, and digital content via e-commerce logic</li>
+  </ul>
 </section>
+
 
 <section>
   <h2>🎥 Cluster 5: Multimedia, Motion Design & Storytelling</h2>
@@ -203,6 +245,28 @@
   <li>Enables transparency with dashboards and real-time metrics</li>
 </ul>
 </section>
+
+<section>
+  <h2>🪙 Cluster 7: NFT, Blockchain & Smart Assets</h2>
+  <table>
+    <tr><th> Blockchain Platforms</th><td>Ethereum, Polygon (Matic), Solana</td></tr>
+    <tr><th> NFT Standards</th><td>ERC-721, ERC-1155 (Ethereum); SPL (Solana)</td></tr>
+    <tr><th> Development Tools</th><td>Thirdweb, OpenZeppelin, Alchemy, Infura, Moralis</td></tr>
+    <tr><th> Wallet Integration</th><td>MetaMask, WalletConnect</td></tr>
+    <tr><th> Smart Contract Dev</th><td>Solidity, Rust, Hardhat, Foundry, Truffle</td></tr>
+    <tr><th> Marketplaces</th><td>OpenSea, Rarible (Ethereum); Magic Eden (Solana)</td></tr>
+  </table>
+  <h3>Role in Process:</h3>
+  <ul>
+    <li> Transparent tracking: all donations and actions are verifiable on-chain</li>
+    <li> Tokenized participation: users receive NFT certificates for support and interaction</li>
+    <li> Gamification: badges, levels, and collectible POI-related assets</li>
+    <li> Global reach: access to crypto communities and DeFi</li>
+    <li> Token-gated access: unlock premium 3D scenes, videos, and content via NFT</li>
+    <li> Verifiable impact: NFTs serve as immutable proof of contribution</li>
+  </ul>
+</section>
+
 
 
 <section>
@@ -311,5 +375,11 @@
     }
   });
 </script>
+
+<footer style="background-color:#f9f9f9; text-align:center; padding:20px; font-size:0.95rem; color:#555; border-top:1px solid #ddd; margin-top:60px;">
+  <p><strong>Address:</strong> 333 Dundas St E, Toronto, ON M5A 2A2</p>
+  <p><strong>Website:</strong> <a href="https://www.ishare.ca" target="_blank" style="color:#333; text-decoration:underline;">www.ishare.ca</a></p>
+  <p><strong>Phone:</strong> 416-249-0788</p>
+</footer>
 </body>
 </html>
