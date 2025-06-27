@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technology Architecture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+  background-image: radial-gradient(circle at top left, rgba(0,0,0,0.05), transparent),
+                    radial-gradient(circle at bottom right, rgba(0,0,0,0.05), transparent);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+    header {
+  background-color: #fff;
+  color: #111;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+    header img {
+      max-height: 60px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 5vw;
+  box-sizing: border-box;
+}
+
+    section {
+  margin-bottom: 60px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+    h2 {
+      color: #e56c1f;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  display: table;
+}
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    .connection-map {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-family: monospace;
+    }
+
+    .chart-container {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" />
+    <h1>Technology Architecture of the Digital Charity Platform</h1>
+    <p>Structured into 6 Logical Clusters + Analytics & Visualization Support</p>
+  </header>
+
+  <section>
+  <h2>🧹 Cluster 1: Spatial Environment & 3D Visualization</h2>
+  <table>
+    <tr><th colspan="2">3D Modeling & CAD</th></tr>
+    <tr><td colspan="2">Blender, Rhino 3D, SketchUp, 3ds Max, Cinema 4D</td></tr>
+    <tr><td colspan="2">AutoCAD, ArchiCAD, Revit, Vectorworks Architect, BricsCAD</td></tr>
+    <tr><th colspan="2">Real-time & Rendering</th></tr>
+    <tr><td colspan="2">Unreal Engine 5.4+, Enscape, Twinmotion, V-Ray, Lumion</td></tr>
+    <tr><th colspan="2">Web/XR Visualization</th></tr>
+    <tr><td colspan="2">A-Frame, Three.js, WebXR API, Cesium.js</td></tr>
+  </table>
+  <h3>Role in Process:</h3>
+<ul>
+  <li>Design and modeling of architectural and environmental scenes using CAD and 3D tools</li>
+  <li>Integration with BIM platforms for real-world project simulation</li>
+  <li>Rendering for both web (WebXR) and real-time immersive experiences (Unreal Engine)</li>
+  <li>Interactive Points of Interest (POI) embedded in 3D environments</li>
+  <li>Foundation for immersive donor experiences and project visualization</li>
+</ul>
+</section>
+
+<section>
+  <h2>💬 Cluster 2: Artificial Intelligence, LLMs, 3D Avatars & NPCs</h2>
+  <table>
+    <tr><th>LLM Engines</th><td>OpenAI GPT-4 / GPT-3.5, Gemma, Mistral, LLaMA via OpenRouter, LoRA Fine-Tuning (HuggingFace)</td></tr>
+    <tr><th>Voice & Interaction</th><td>ElevenLabs, Azure TTS, Web Speech API</td></tr>
+    <tr><th>3D Avatars / NPCs</th><td>ReadyPlayerMe, MetaHuman, Audio2Face, Unreal Blueprints</td></tr>
+  </table>
+  <h3>Role in Process:</h3>
+<ul>
+  <li>Conversational assistants powered by LLMs help onboard and guide users</li>
+  <li>Voice synthesis and facial animation bring characters and avatars to life</li>
+  <li>Emotion-driven storytelling and NPCs enhance engagement</li>
+  <li>NPCs can deliver information, collect feedback, and simulate scenarios</li>
+</ul>
+</section>
+
+<section>
+  <h2>🌐 Cluster 3: Web Interface & UX/UI</h2>
+  <table>
+    <tr><th>Web Stack</th><td>HTML5 / CSS3 / Tailwind, JavaScript / React / Next.js</td></tr>
+    <tr><td colspan="2">i18next, Shadcn/UI, Headless UI, Framer Motion, Figma</td></tr>
+    <tr><th>Forms & Interactions</th><td>EmailJS / Formspree, LocalStorage, progress bars, validation</td></tr>
+  </table>
+  <h3>Role in Process:</h3>
+<ul>
+  <li>Frontend logic ensures usability across all devices</li>
+  <li>Multilingual interface supports accessibility (EN, UA)</li>
+  <li>Interactive forms and animations improve donation and participation experience</li>
+  <li>Progress tracking and validation guide users step by step</li>
+</ul>
+</section>
+
+<section>
+  <h2>⚙️ Cluster 4: Backend, APIs & Infrastructure</h2>
+  <table>
+    <tr><th>Server Logic</th><td>Node.js + Express / Python Flask, REST, WebSockets, GraphQL</td></tr>
+    <tr><th>Databases</th><td>MongoDB, PostgreSQL, Supabase</td></tr>
+    <tr><th>Storage</th><td>Firebase Storage, Cloudinary, Supabase Storage</td></tr>
+    <tr><th>Hosting</th><td>GitHub Pages, Vercel, Netlify, Railway (optional)</td></tr>
+  </table>
+  <h3>Role in Process:</h3>
+<ul>
+  <li>Backend manages user accounts, POI data, form responses, and uploads</li>
+  <li>Provides secure API endpoints and authorization logic</li>
+  <li>Hosts real-time functions and webhooks</li>
+  <li>Admin panel logic for managing campaigns and analytics</li>
+</ul>
+</section>
+
+<section>
+  <h2>🎥 Cluster 5: Multimedia, Motion Design & Storytelling</h2>
+  <table>
+    <tr><th>Tools</th><td>Adobe After Effects, Premiere Pro, Illustrator, Photoshop</td></tr>
+    <tr><td colspan="2">YouTube / Vimeo Embed API, WebGL media players</td></tr>
+  </table>
+  <h3>Role in Process:</h3>
+<ul>
+  <li>Visual media used to tell compelling narratives about each cause</li>
+  <li>Explainer videos embedded in POI and onboarding sequences</li>
+  <li>Graphic design ensures brand identity and emotional impact</li>
+</ul>
+</section>
+
+<section>
+  <h2>📊 Cluster 6: Analytics, Data Visualization & Transparency</h2>
+  <table>
+    <tr><th>Tracking & Behavior</th><td>Google Analytics, PostHog, LogRocket, Hotjar</td></tr>
+    <tr><th>Data Visualization</th><td>Chart.js, D3.js, Metabase, Supabase Dashboards</td></tr>
+    <tr><th>Sample Metrics</th><td>72% POI interaction, Avg. 3m45s on site, 12.6% conversion, Top: 3D AI Avatar (29.4%)</td></tr>
+  </table>
+  <h3>Role in Process:</h3>
+<ul>
+  <li>Tracks user behavior to improve UX and POI structure</li>
+  <li>Visualizes performance and engagement for internal use</li>
+  <li>Supports reporting to stakeholders and donors</li>
+  <li>Enables transparency with dashboards and real-time metrics</li>
+</ul>
+</section>
+
+<section class="chart-container">
+  <h2>📈 User Engagement Statistics</h2>
+      <canvas id="engagementChart"></canvas>
+    </section>
+
+<section class="chart-container">
+      <h2>📊 Cluster Comparison by Tools</h2>
+      <canvas id="clusterChart"></canvas>
+    </section>
+
+    <section class="chart-container">
+      <h2>🎯 Feature Coverage Across Clusters</h2>
+      <canvas id="featureChart"></canvas>
+    </section>
+
+    <section class="connection-map">
+      <h3>🔄 Cross-Cluster Connections</h3>
+      <pre>
+[1. 3D/XR] ↔ [2. AI/Avatars] ↔ [3. Web UI]
+     ↓               ↓                 ↓
+[4. Backend/API] ↔ [5. Media] ↔ [6. Analytics]
+      </pre>
+    </section>
+  </main>
+
+  
+<script>
+  const ctx = document.getElementById('engagementChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['POI Interaction', 'Avg Time (min)', 'Conversion Rate %', 'Top Element Engagement'],
+      datasets: [{
+        label: 'User Engagement Metrics',
+        data: [72, 3.75, 12.6, 29.4],
+        backgroundColor: ['#f87171', '#60a5fa', '#facc15', '#34d399']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.raw + (ctx.dataIndex === 1 ? ' min' : '%') } }
+      },
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+
+  const ctxCluster = document.getElementById('clusterChart').getContext('2d');
+  new Chart(ctxCluster, {
+    type: 'pie',
+    data: {
+      labels: ['3D & XR', 'AI & Avatars', 'Web UI', 'Backend', 'Media', 'Analytics'],
+      datasets: [{
+        data: [12, 10, 9, 8, 7, 6],
+        backgroundColor: ['#ef4444', '#3b82f6', '#10b981', '#8b5cf6', '#f59e0b', '#14b8a6']
+      }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom' } }
+    }
+  });
+
+  const ctxFeature = document.getElementById('featureChart').getContext('2d');
+  new Chart(ctxFeature, {
+    type: 'radar',
+    data: {
+      labels: ['Immersion', 'Interaction', 'Data', 'Visualization', 'Voice', 'Admin'],
+      datasets: [
+        {
+          label: 'Cluster 1',
+          data: [10, 8, 4, 7, 2, 3],
+          backgroundColor: 'rgba(59,130,246,0.2)',
+          borderColor: '#3b82f6'
+        },
+        {
+          label: 'Cluster 2',
+          data: [5, 10, 6, 4, 9, 3],
+          backgroundColor: 'rgba(16,185,129,0.2)',
+          borderColor: '#10b981'
+        }
+      ]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom' } },
+      scales: { r: { beginAtZero: true, max: 10 } }
+    }
+  });
+</script>
+</body>
+</html>
